@@ -1,0 +1,66 @@
+    1  id
+    2  useradd -u 1234 user1
+    3  sudo useradd -u 1234 user1
+    4  id
+    5  sudo passwd -e user1 
+    6  ls id
+    7  exit
+    8  su - user1
+    9  grep user1 /etc/passwd
+   10  grep user1 /etc/shadow
+   11  sudo grep user1 /etc/shadow
+   12  sudo grep user1 /etc/group
+   13  sudo passwd user1 
+   14  sudo grep user1 /etc/shadow
+   15  date 
+   16  sudo chage -m 0 -M 90 -W 5 -I 10 user1 
+   17  chage -l user1 
+   18  sudo chage -l user1 
+   19  sudo groupadd 
+   20  sudo groupadd -h
+   21  sudo groupadd -U -h
+   22  sudo groupadd -U students
+   23  sudo groupadd students
+   24  sudo groupadd students -U user1
+   25  grep /etc/group
+   26  grep user1 /etc/group
+   27  cat /etc/group
+   28  sudo usermod -aG students user1 
+   29  grep user1 /etc/group
+   30  find / -perm -fprintf /root/suid.txt '%#m %u %p\n'
+   31  sudo find / -perm -fprintf /root/suid.txt '%#m %u %p\n'
+   32  sudo find / -perm -4000 -fprintf /root/suid.txt '%#m %u %p\n'
+   33  # cat /root/suid.txt
+   34  sudo  cat /root/suid.txt
+   35  sudo ps -eo pid,ruid,euid,comm | awk '$2 >= 1000 && $3 == 0' > UID.txt
+   36  cat UID.txt
+   37  sudo cat /etc/passwd
+   38  cat /etc/passwd
+   39  cp /usr/bin/cat .
+   40  sudo chown root:root ./cat
+   41  sudo chmod u+s ./cat
+   42  ./cat /etc/shadow
+   43  ./cat /etc/shadow
+   44  ./cat /etc/shadow | head -n 1
+   45  ./cat /etc/shadow
+   46  cp /usr/bin/chown .
+   47  sudo setcap "cap_chown=ep" chown 
+   48  getcap ./chown 
+   49  chown user1 UID.txt
+   50  chown admin UID.txt
+   51  chown root UID.txt
+   52  ./chown root UID.txt
+   53  ./chown user1 UID.txt
+   54  sudo visudo
+   55  grep user1
+   56  grep user1 /etc/group
+   57  grep user1 /etc/shadow
+   58  sudo grep user1 /etc/shadow
+   59  chage -l user1
+   60  sudo chage -l user1
+   61  visudo /etc/sudoers
+   62  sudo visudo /etc/sudoers
+   63  sudo -u user1 date --set="Tue Oct 30 11:11:11 EEST 2026"
+   64  sudo visudo /etc/sudoers
+   65  ls -l
+   66  history > ~/history.out
